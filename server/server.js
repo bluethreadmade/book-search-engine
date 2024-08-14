@@ -6,12 +6,10 @@ const routes = require("./routes");
 const { ApolloServer } = require("@apollo/server");
 // const { ApolloServer } = require("apollo-server-express");
 // const { expressMiddleware } = require("apollo-server-express");
-
+const { expressMiddleware } = require("@apollo/server/express4");
 
 const typeDefs = require("./schemas/typeDefs.js"); 
 const resolvers = require("./schemas/resolvers.js"); 
-
-const { expressMiddleware } = require("@apollo/server/express4");
 
 const authMiddleware = require("./utils/auth.js");
 
