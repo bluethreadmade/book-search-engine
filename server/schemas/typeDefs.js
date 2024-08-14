@@ -1,14 +1,14 @@
 // typedefs go here
 const typeDefs = `
-type: User {
+type User {
     _id: ID
     username: String
     email: String
-    bookCount: Number
+    bookCount: Int
     savedBooks: [Book]
 }
 
-type: Book{
+type Book{
     bookId: String
     authors: [String]
     description: String
@@ -17,16 +17,17 @@ type: Book{
     link: String
 }
 
-type: Auth{ 
+type Auth{ 
   token: ID
   user: User
 }
 
 type Query {
   me: User
+  user(id: ID, username: String): User
 }
 
-type SaveBookInput {
+input SaveBookInput {
     authors: [String]
     description: String
     title: String
@@ -36,10 +37,10 @@ type SaveBookInput {
 }
 
 type Mutation {
-  addUser(username: String!, email: String!, password: String!): Auth
+  createUser(username: String!, email: String!, password: String!): Auth
   login(email: String!, password: String!): Auth
   saveBook(input: SaveBookInput): User
-  removeBook(bookId: String): User
+  deleteBook(bookId: String): User
 }
 `;
 
