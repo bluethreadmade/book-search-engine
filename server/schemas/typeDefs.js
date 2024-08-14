@@ -40,18 +40,6 @@ type Mutation {
   login(email: String!, password: String!): Auth
   saveBook(input: SaveBookInput): User
   removeBook(bookId: String): User
-
-  createProject(
-    name: String!,
-    materials: [String]!,
-    instructions: [String]!,
-    pricePoint: String!,
-    difficulty: String!,
-    craft: String!
-    authorId: ID!
-  ): Project
-  deleteProject(id: ID!): Project
-
 }
 `;
 
