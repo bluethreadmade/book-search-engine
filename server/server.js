@@ -12,6 +12,7 @@ const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  introspection: true, // Enable introspection
 });
 
 const startApolloServer = async () => {
